@@ -1,0 +1,22 @@
+services:
+
+    stalwart:
+        image: stalwartlabs/stalwart:latest
+        container_name: stalwart             
+        tty: true
+        stdin_open: true
+        ports:
+            - 8443:443
+            - 8480:8080
+            - 25:25
+            - 587:587
+            - 465:465
+            - 143:143
+            - 993:993
+            - 4190:4190
+            - 110:110
+            - 995:995
+        volumes:
+            - ./stalwart:/opt/stalwart
+        restart: unless-stopped    
+
