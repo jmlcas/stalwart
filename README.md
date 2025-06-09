@@ -1,6 +1,6 @@
 # Stalwart
 
-Ver en "localhost:8480"
+Ver en "localhost:7080"
 
 Usuario: admin
 
