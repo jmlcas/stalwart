@@ -3,7 +3,7 @@ services:
     stalwart:
         image: stalwartlabs/stalwart:latest
         container_name: stalwart
-        hostname: mail.yourdomain.com    # change domain to your mail server  
+        hostname: mail.yourdomain.com    # change domain to your mail server
         tty: true
         stdin_open: true
         ports:
@@ -20,20 +20,4 @@ services:
         volumes:
             - ./stalwart:/opt/stalwart
         restart: unless-stopped
-        
-    roundcube:
-        image: roundcube/roundcubemail:latest
-        container_name: roundcube
-        restart: unless-stopped
-        ports:
-            - "680:80" 
-        volumes:
-            - ./roundcube/db:/var/roundcube/db
-            - ./roundcube/www:/var/www/html
-        environment:
-            - ROUNDCUBEMAIL_DB_TYPE=sqlite
-            - ROUNDCUBEMAIL_SKIN=elastic       
-            - ROUNDCUBEMAIL_DEFAULT_HOST=tls://mail.yourdomain.com  # change domain to your mail server
-            - ROUNDCUBEMAIL_SMTP_SERVER=tls://mail.yourdomain.com   #  change domain to your mail server
-
    
